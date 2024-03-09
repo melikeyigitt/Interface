@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontrol Paneli</title>
+    <div class="game-wrapper">
+        <div class="joystick-wrapper">
+            <p></p>
+            <div class="arrow up" id="ArrowUp" onmousedown="startMove(-0.5, 0, 0, 0, 0, 0)" onmouseup="stopMove()">Ileri</div>
+            <p></p>
+            <div class="arrow down" id="ArrowLeft" onmousedown="startMove(0, 0, 0, 0, 0, 1.0)" onmouseup="stopMove()">Sol</div>
+            <p></p>
+            <div class="arrow right" id="ArrowRight" onmousedown="startMove(0, 0, 0, 0, 0, -1.0)" onmouseup="stopMove()">Sag</div>
+            <p></p>
+            <div class="arrow left" id="ArrowDown" onmousedown="startMove(-0.5, 0, 0, 0, 0, 0)" onmouseup="stopMove()">Geri</div>
+            <p></p>
+        </div>
+    </div>
+
+    <style>
+        .game-wrapper{
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+        .joystick-wrapper{
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+
+        }
+        .arrow {
+            margin: auto;
+            width: 0;
+            height: 0;
+            border-left: 3.2rem solid transparent;
+            border-right: 3.2rem solid transparent;
+
+            color: white;
+
+            border-bottom: 50px solid black;
+            cursor: pointer;
+        }
+        .arrow:hover{
+            border-bottom: 50px solid rgb(44, 143, 255);
+        }
+
+        .joystick-wrapper div:nth-of-type(2){
+            transform: rotate(-90deg);
+        }
+        .joystick-wrapper div:nth-of-type(3){
+            transform: rotate(90deg);
+        }
+        .joystick-wrapper div:nth-of-type(4){
+            transform: rotate(180deg);
+        }
+        .pressed{
+            border-bottom: 50px solid rgb(71, 243, 255);
+        }
+        .pressed:hover{
+            border-bottom: 50px solid rgb(71, 243, 255);
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

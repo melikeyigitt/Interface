@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #333;
+    z-index: 1;
+}
+
+#logo {
+    width: 150px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #444;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    padding-right: 10px;
+    top: 100px; /* Butonları ve menü butonlarını biraz aşağı kaydır */
+}
+
+.button {
+    background-color: #03a9f4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#content {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 200px;
+    top: 150px; /* İçeriği daha aşağı kaydır */
+    z-index: 0;
+    position: relative; /* İçeriğin header'ın altında görünmesini sağlar */
+}
+
+#content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+#akimlar-tablo {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    color: #fff;
+}
+
+#akimlar-tablo td,
+#akimlar-tablo th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#akimlar-tablo tr:nth-child(even) {
+    background-color: #424242;
+}
+
+#akimlar-tablo th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #03a9f4;
+    color: white;
+}
