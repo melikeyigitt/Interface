@@ -8,35 +8,40 @@
 </head>
 <body>
 
-<div class="game-wrapper">
-    <div class="joystick-wrapper">
-        <p></p>
-        <div class="arrow up" id="ArrowUp" onmousedown="startMove(-0.5, 0, 0, 0, 0, 0)" onmouseup="stopMove()">Ileri</div>
-        <p></p>
-        <div class="arrow down" id="ArrowLeft" onmousedown="startMove(0, 0, 0, 0, 0, 1.0)" onmouseup="stopMove()">Sol</div>
-        <p></p>
-        <div class="arrow right" id="ArrowRight" onmousedown="startMove(0, 0, 0, 0, 0, -1.0)" onmouseup="stopMove()">Sag</div>
-        <p></p>
-        <div class="arrow left" id="ArrowDown" onmousedown="startMove(-0.5, 0, 0, 0, 0, 0)" onmouseup="stopMove()">Geri</div>
-        <p></p>
+
+
+
+
+    <div class="game-wrapper">
+        <div class="joystick-wrapper">
+            <p></p>
+            <div class="arrow up" id="ArrowUp" onmousedown="startMove(-0.5, 0, 0, 0, 0, 0)" onmouseup="stopMove()">Ileri</div>
+            <p></p>
+            <div class="arrow down" id="ArrowLeft" onmousedown="startMove(0, 0, 0, 0, 0, 1.0)" onmouseup="stopMove()">Sol</div>
+            <p></p>
+            <div class="arrow right" id="ArrowRight" onmousedown="startMove(0, 0, 0, 0, 0, -1.0)" onmouseup="stopMove()">Sag</div>
+            <p></p>
+            <div class="arrow left" id="ArrowDown" onmousedown="startMove(-0.5, 0, 0, 0, 0, 0)" onmouseup="stopMove()">Geri</div>
+            <p></p>
+        </div>
     </div>
-</div>
-<!-- You would add any JavaScript command like this under each panel -->
-<script>
-    function showControlPanel() {
-        document.getElementById("control-panel").style.display = "block";
-        document.getElementById("mission-panel").style.display = "none";
-        document.getElementById("durum-panel").style.display = "none";
-        document.getElementById("service-action-panel").style.display = "none"; // Ekledim
-        document.getElementById("map-panel").style.display = "none"; // Ekledim
-    }
-    function startMove(linearX, linearY, linearZ, angularX, angularY, angularZ) {
-        // Belirli bir süre aralığında sürekli olarak cmd_vel mesajı yayınla
-        moveInterval = setInterval(function() {
-            publishCmdVel(linearX, linearY, linearZ, angularX, angularY, angularZ);
-        }, 100); // Her 100 milisaniyede bir yayın yap
-    }
-</script>
+    <!-- You could add any JavaScript command like this under each panel -->
+    <!-- You can also create a JavaScript file for KontrolPaneli.html called KontrolPaneli.js then call it under head-->
+    <script>
+        function showControlPanel() {
+            document.getElementById("control-panel").style.display = "block";
+            document.getElementById("mission-panel").style.display = "none";
+            document.getElementById("durum-panel").style.display = "none";
+            document.getElementById("service-action-panel").style.display = "none"; // Ekledim
+            document.getElementById("map-panel").style.display = "none"; // Ekledim
+        }
+        function startMove(linearX, linearY, linearZ, angularX, angularY, angularZ) {
+            // Belirli bir süre aralığında sürekli olarak cmd_vel mesajı yayınla
+            moveInterval = setInterval(function() {
+                publishCmdVel(linearX, linearY, linearZ, angularX, angularY, angularZ);
+            }, 100); // Her 100 milisaniyede bir yayın yap
+        }
+    </script>
 
 </body>
 </html>
