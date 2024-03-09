@@ -5,6 +5,21 @@
     <title>Title</title>
 </head>
 <body>
+    <div id="mission-panel">
+    <!-- Algılanan QR Kodu -->
+    <div >
+        <h2>Algılanan QR Kodu:</h2>
+        <div id="qr_code"></div>
+        <h2>Sonraki Hareket:</h2>
+    </div>
+    <div >
+        <label for="path">Path:</label>
+        <input type="text" id="path" placeholder="S1,k2,k1,k4,k3,S1"><br>
 
+        <label for="robot_yon">Robot Yönü:</label>
+        <input type="number" id="robot_yon" placeholder="6"><br>
+
+        <button class="button" onclick="startBosTurService()">BosTur Servisini Başlat</button>
+    </div>
 </body>
 </html>

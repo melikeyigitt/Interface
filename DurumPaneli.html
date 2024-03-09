@@ -3,6 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Kontrol Paneli</title>
+
+</head>
+<body>
+    <div id="durum-panel">
+    <!-- Akımlar Tablosu -->
+    <h2>Akımlar</h2>
+    <table id="akimlar-tablo">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>Ana Akım</th>
+            <th>Sol Motor Akımı</th>
+            <th>Sağ Motor Akımı</th>
+            <th>Lineer Motor Akımı</th>
+            <th>PC Akımı</th>
+        </tr>
+        </thead>
+        <tbody id="akimlar-tablo-icerik">
+        <!-- Akım değerleri buraya dinamik olarak eklenecek -->
+        </tbody>
+    </table>
+    </div>
     <script>
         // Kontrol Paneli menüsünü göster
         function showControlPanel() {
@@ -13,8 +35,6 @@
             document.getElementById("map-panel").style.display = "none"; // Ekledim
         }
     </script>
-</head>
-<body>
 
 </body>
 </html>

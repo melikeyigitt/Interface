@@ -5,6 +5,53 @@
     <title>Title</title>
 </head>
 <body>
+    <div id="map-panel">
+    <h2>Harita</h2>
+    <label >TEST</label>
+    <div>
+        <!-- Yeni çember oluşturmak için input alanı ve buton -->
+        <label for="x-coordinate">X Koordinatı:</label>
+        <input type="number" id="x-coordinate" step="1">
+        <label for="y-coordinate">Y Koordinatı:</label>
+        <input type="number" id="y-coordinate" step="1">
+        <label for="radius">Yarıçap:</label>
+        <input type="number" id="radius" step="1">
+        <button onclick="addNewCircle()">Yeni Çember Ekle</button> </div>
 
+    <div>
+        <label for="x-coordinate_for_text">X Koordinatı:</label>
+        <input type="number" id="x-coordinate_for_text" name="x-coordinate_for_text" step="1">
+        <label for="y-coordinate_for_text">Y Koordinatı:</label>
+        <input type="number" id="y-coordinate_for_text" name="y-coordinate_for_text" step="1">
+        <label for="text_for_text">Eklemek istediğiniz metin:</label>
+        <input type="text" id="text_for_text" name="text_for_text" step="1">
+        <button  onclick="addTextToMap()">Metni Haritaya Ekle</button></div>
+
+    <div>
+        <!-- Dikdörtgen Eklemek İçin Input Alanları -->
+        <label for="x-coordinate_rect">X Koordinatı:</label>
+        <input type="number" id="x-coordinate_rect" name="x-coordinate_rect" step="1">
+
+        <label for="y-coordinate_rect">Y Koordinatı:</label>
+        <input type="number" id="y-coordinate_rect" name="y-coordinate_rect" step="1">
+
+        <label for="rect-width">Genişlik:</label>
+        <input type="number" id="rect-width" name="rect-width" step="1">
+
+        <label for="rect-height">Yükseklik:</label>
+        <input type="number" id="rect-height" name="rect-height" step="1">
+
+        <button onclick="addRectangleToMap()">Dikdörtgeni Haritaya Ekle</button>
+    </div>
+
+    <div id="map-container">
+        <div style="position: relative; display: inline-block;">
+            <img id="map-image" src="white_image.png" alt="Harita Görseli" width="900" height="725"> <!-- Görüntü boyutları ayarlandı -->
+            <svg id="map-overlay" style="position: absolute; top: 50px; left: 50px;" width="900" height="725"> <!-- SVG boyutları ayarlandı -->
+                <!-- Siyah daire burada olacak -->
+            </svg>
+        </div>
+    </div>
+    </div>
 </body>
 </html>
