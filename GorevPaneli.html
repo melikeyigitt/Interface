@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Gorev Paneli</title>
+    <script src="js/jsros.js"></script>
+    <link rel="stylesheet" href="css/GorevPaneli.css">
 </head>
 <body>
     <div id="mission-panel">
@@ -20,6 +22,39 @@
         <input type="number" id="robot_yon" placeholder="6"><br>
 
         <button class="button" onclick="startBosTurService()">BosTur Servisini Başlat</button>
+    </div>
+    <script>
+        function startBosTurService() {
+            // Kullanıcıdan path ve robot_yon verilerini al
+            var path = document.getElementById("path").value;
+            var robotYon = parseInt(document.getElementById("robot_yon").value);
+
+            // ROS bağlantısı oluşturuluyor
+            const ros = new ROSLIB.Ros({
+                url: "ws://localhost:9090"
+            });
+
+            // Servis çağrısı için gerekli bilgiler
+            var serviceCall = new ROSLIB.Service({
+                ros: ros,
+                name: '/bos_tur_server',
+                serviceType: 'robot_bringup/BosTurService'
+            });
+
+            // Servis çağrısı için gerekli parametreler
+            var request = new ROSLIB.ServiceRequest({
+                start: true,
+                path: path,
+                robot_yon: robotYon
+            });
+
+            // Servis çağrısı yap
+            serviceCall.callService(request, function(result) {
+                console.log('Servis çağrısı sonucu: ', result);
+                // Servis çağrısı sonucunu işleyebilirsiniz
+            });
+        }
+    </script>
     </div>
 </body>
 </html>

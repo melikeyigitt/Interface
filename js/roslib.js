@@ -2714,7 +2714,7 @@ module.exports = ROSLIB;
 
 },{"./actionlib":14,"./core":23,"./math":28,"./tf":31,"./urdf":43,"object-assign":3}],9:[function(require,module,exports){
 (function (global){(function (){
-global.ROSLIB = require('./RosLib');
+global.ROSLIB = require('./roslib');
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./RosLib":8}],10:[function(require,module,exports){
 /**
